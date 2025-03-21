@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Vecna's Hangman</title>
+  <title>Hangman By The Shore</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,7 +18,7 @@
     <!-- place navbar here -->
   </header>
   <main class="container text-center">
-    <h1 class="mb-4">Shamrock Hangman</h1>
+    <h1 class="mb-4">Hangman By The Shore</h1>
     <div id="difficultySelection">
       <h3>Select Difficulty:</h3>
       <button class="btn btn-success difficulty-btn" onclick="startGame('easy')">
@@ -38,27 +38,27 @@
     </div>
 
     <!--Game Area-->
-    <div id="gameArea" class="mt-4 d-block">
+    <div id="gameArea" class="mt-4 d-none">
       <!--ADD BACK D-NONE-->
       <!--word display-->
       <h2 id="wordDisplay" class="mb-3">_ _ _ _ _ _</h2>
 
       <!--input for guessing-->
       <div>
-        <input type="text" id="letterInput" maxlength="1" class="form-control d-inline-block w-auto" />
+        <input type="text" id="letterInput" maxlength="1" class="form-control d-inline-block w-auto text-center" />
         <button id="guessBtn" class="btn btn-warning" onclick="guessLetter()">
           Guess
         </button>
       </div>
-    </div>
 
-    <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses</p>
-    <img id="shamrock" src="img/shamrock6.png" alt="Shamrock Health" class="shamrock-img" />
+      <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses</p>
+      <img id="shamrock" src="img/shamrock6.png" alt="Shamrock Health" class="shamrock-img" />
 
-    <div class="mt-4">
-      <button id="restartBtn" class="btn btn-danger" onclick="restartGame()">
-        Restart Game
-      </button>
+      <div class="mt-4">
+        <button id="restartBtn" class="btn btn-danger" onclick="restartGame()">
+          Restart Game
+        </button>
+      </div>
     </div>
   </main>
   <footer>
