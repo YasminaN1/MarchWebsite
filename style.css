@@ -2,4 +2,10 @@ body {
   background-image: url(imgs/download.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
+}
+h1{
+font-family: "chorine-large", sans-serif;
+font-weight: 300;
+font-style: normal;
 }

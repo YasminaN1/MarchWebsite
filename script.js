@@ -13,6 +13,7 @@ const wordlist = [
 'tradition',
 ]
 
+//setting game variables
 
 let selectedWord = ''
 let displayWord= ''
@@ -21,7 +22,7 @@ let guessedLetters = []
 const maxMistakes = 6
 
 function startGame(level){
-    selectedWord = getRandomWord(level) 
+ selectedWord = getRandomWord(level) 
 
 // update difficulty display
 updateDifficultyDisplay(level)
@@ -35,9 +36,11 @@ document.getElementById('wordDisplay').textContent - displayWord.split(''). join
 
 // Add d-none to the #difficultySelection div
 document.getElementById('difficultySelection').classList.add('d-none')
+
 //  remove d-none from #difficultyBox & #gameArea
 document.getElementById('gameArea').classList.remove('d-none')
 document.getElementById('difficultyBox').classList.remove('d-none')
+
 // add d-block to #difficultyBox & #gameArea
 document.getElementById('gameArea').classList.add('d-block')
 document.getElementById('difficultyBox').classList.add('d-block')
@@ -63,5 +66,36 @@ function updateDifficultyDisplay(level){
     difficultyBox.textContent = `Difficulty: ${level.charAt(0).toUpperCase() + level.slice(1)}`
 
     // only the appropriate CSS style for chosen difficulty
-    difficultyBox.classList.add(level)
+    difficultyBox.classList.add(level) 
+}
+
+function guessLetter(){
+    let inputField = document.getElementById('letterInput') //get input field
+    let guessedLetter = inputField.value.toLowerCase() //convert input to lowercase
+
+    //check if input is a valid letter (a-z)
+if(!guessedLetter.match(/^[a-z]$/)){
+alert("Please Enter A valid Letter!")
+inputField.value = '' //clear input function
+return //Exit function
+}
+
+//check if letter was already guessed
+if(guessedLetters.includes(guessedLetter)){
+alert(`You already picked '${guessedLetter}'. Try a different letter!`)
+inputField.value = '' // clear input field
+return //exit function
+} else{
+    //store guessed letter in guessedLetters Array
+    guessedLetters.push(guessedLetter)
+}
+
+if(selectedWord.includes(guessedLetters)) {
+    correctGuess(guessedLetter)
+} else {
+    wrongGuesses(guessedLetter)
+}
+
+inputField.value = ''
+inputField.focus()
 }
