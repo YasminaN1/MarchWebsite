@@ -104,7 +104,7 @@ function wrongGuess(guessedLetter) {
     //add the guessed letter to the HTML div
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
 
-    document.getElementById('shamrock').src = `imgs/shamrocks${6 - wrongGuess}.jpg`
+    document.getElementById('shamrock').src = `imgs/moana${wrongGuesses + 1}.png`
     //check to see if the number of wrongGuesses === the null/mistakes if iy is, call endGame(false)
     if (wrongGuesses === maxMistakes) {
         endGame(false);
