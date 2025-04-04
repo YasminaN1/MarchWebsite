@@ -1,5 +1,5 @@
 const wordlist = [
-    'Moana', 'Maui', 'ocean', 'island', 'tefiti', 'heart', 'voyage', 'navigator', 'voyaging', 'tahiti',
+    'moana', 'maui', 'ocean', 'island', 'tefiti', 'heart', 'voyage', 'navigator', 'voyaging', 'tahiti',
     'motunui', 'demigod', 'lava', 'reef', 'pua', 'heihei',
 ];
 
@@ -9,6 +9,7 @@ let displayedWord = '';
 let wrongGuesses = 0;
 let guessedLetters = [];
 const maxMistakes = 6;
+
 // localStorage allows you to save things directly in the browser, so when you refresh or reopen the page, the data is still there.
 let winCount = localStorage.getItem('winCount') || 0;  // Use 0 if not found
 let lossCount = localStorage.getItem('lossCount') || 0; 
